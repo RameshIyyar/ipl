@@ -25,4 +25,8 @@ struct ipl_settings {
     ~ipl_settings() = default;
 };
 
+void ipl_set_mode(enum ipl_mode mode);
+
+enum ipl_mode ipl_mode(void);
+
 #endif /* __IPL_SETTINGS_H__ */
