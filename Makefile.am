@@ -80,8 +80,10 @@ endif
 libipl_la_SOURCES = \
 	$(libipl_istep_SOURCES) \
 	libipl/libipl.C \
+	libipl/ipl_settings.C \
 	libipl/libipl_internal.H \
-	libipl/libipl.H
+	libipl/libipl.H \
+	libipl/ipl_settings.H
 
 libipl_la_CXXFLAGS = -Wall -Werror $(EKB_CXXFLAGS) \
 	$(libipl_istep_CXXFLAGS) \
