@@ -31,5 +31,6 @@ enum ipl_mode ipl_mode(void);
 ipl_log_func_t ipl_log_func(void);
 void* ipl_log_func_priv_data(void);
 int ipl_log_level(void);
+ipl_error_callback_func_t ipl_error_callback_fn(void);
 
 #endif /* __IPL_SETTINGS_H__ */
