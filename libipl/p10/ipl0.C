@@ -11,6 +11,7 @@ extern "C" {
 #include "libipl.H"
 #include "libipl_internal.H"
 #include "common.H"
+#include "ipl_settings.H"
 
 #include <ekb/chips/p10/procedures/hwp/perv/p10_start_cbs.H>
 #include <ekb/chips/p10/procedures/hwp/perv/p10_setup_ref_clock.H>
@@ -180,6 +181,11 @@ static int update_hwas_state_callback(struct pdbg_target* target, void *priv)
 //state of the guarded resources in HWAS state attribute in device tree.
 static void update_hwas_state(bool is_coldboot)
 {
+       if (!ipl_apply_guard()) {
+           ipl_log(IPL_INFO, "Disabled to apply the guard records");
+           return;
+       }
+
 	openpower::guard::libguard_init(false);
 
 	auto records = openpower::guard::getAll();

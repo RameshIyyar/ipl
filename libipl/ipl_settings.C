@@ -17,7 +17,8 @@ ipl_settings::ipl_settings() :
     _log_level(IPL_ERROR),
     _log_func(ipl_log_default),
     _log_func_priv_data(NULL),
-    _error_callback_fn(NULL)
+    _error_callback_fn(NULL),
+    _apply_guard(true)
 {}
 
 void ipl_set_mode(enum ipl_mode mode)
@@ -117,4 +118,14 @@ void ipl_set_error_callback_func(ipl_error_callback_func_t fn)
 ipl_error_callback_func_t ipl_error_callback_fn(void)
 {
     return g_ipl_settings._error_callback_fn;
+}
+
+void ipl_ignore_guard(void)
+{
+    g_ipl_settings._apply_guard = false;
+}
+
+bool ipl_apply_guard(void)
+{
+    return g_ipl_settings._apply_guard;
 }

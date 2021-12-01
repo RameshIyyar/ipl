@@ -12,6 +12,7 @@ struct ipl_settings {
     ipl_log_func_t _log_func;
     void* _log_func_priv_data;
     ipl_error_callback_func_t _error_callback_fn;
+    bool _apply_guard;
 
     // Default IPL settings
     ipl_settings();
@@ -32,5 +33,6 @@ ipl_log_func_t ipl_log_func(void);
 void* ipl_log_func_priv_data(void);
 int ipl_log_level(void);
 ipl_error_callback_func_t ipl_error_callback_fn(void);
+bool ipl_apply_guard(void);
 
 #endif /* __IPL_SETTINGS_H__ */

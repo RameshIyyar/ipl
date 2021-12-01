@@ -81,6 +81,7 @@ void ipl_set_loglevel(int loglevel);
 void ipl_log(int loglevel, const char *fmt, ...);
 
 void ipl_set_error_callback_func(ipl_error_callback_func_t fn);
+void ipl_ignore_guard(void);
 
 /*
  * @Brief This function will call pre_poweroff hardware procedure
